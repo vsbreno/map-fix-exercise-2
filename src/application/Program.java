@@ -33,9 +33,18 @@ public class Program {
 				line = br.readLine();
 			}
 			
-			for (String product : sales.keySet()) {
-				System.out.println(product + ": " + sales.get(product));
+			int mostSoldQuantity = 0;
+			String mostSoldName = null;
+			
+			for (Map.Entry<String, Integer> entry : sales.entrySet()){
+				System.out.println(entry.getKey() + ": " + entry.getValue());
+				if (entry.getValue() > mostSoldQuantity) {
+					mostSoldQuantity = entry.getValue();
+					mostSoldName = entry.getKey();				
+				}
 			}
+			
+			System.out.print("\nMost sold product: " + mostSoldName + " (" + mostSoldQuantity + ")");
 		} 
 		catch (IOException e) {
 			System.out.println("Error: " + e.getMessage());
