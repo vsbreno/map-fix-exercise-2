@@ -32,6 +32,7 @@ public class Program {
 				
 				line = br.readLine();
 			}
+			
 			for (String product : sales.keySet()) {
 				System.out.println(product + ": " + sales.get(product));
 			}
